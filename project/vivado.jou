@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct 17 15:56:11 2022
+# Process ID: 13116
+# Current directory: C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13404 C:\Users\UserTP.PPI919.000\Desktop\vhdl-master\project\project.xpr
+# Log file: C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project/vivado.log
+# Journal file: C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project\vivado.jou
+#-----------------------------------------------------------start_gui
+open_project C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project/project.xpr
+
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd w ]
+add_files C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd w ]
+add_files C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd w ]
+add_files C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd w ]
+add_files -fileset sim_1 C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top simu [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation

@@ -1,0 +1,90 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Oct 17 15:56:11 2022
+# Process ID: 13116
+# Current directory: C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13404 C:\Users\UserTP.PPI919.000\Desktop\vhdl-master\project\project.xpr
+# Log file: C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project/vivado.log
+# Journal file: C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project\vivado.jou
+#-----------------------------------------------------------start_gui
+open_project C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project/project.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/UserTP.PPI919.001/Desktop/project' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/project/projWARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-mScanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [Common 17-1221] Tcl app 'xsim' is out of date for this release. Please run tclapp::reset_tclstore and reinstall the app.
+ERROR: [open_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 948.332 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/UserTP.PPI919.001/Desktop/tache_1' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.gen/sources_1', nor could it be found using path 'C:/Users/UserTP.PPI919.001/Desktop/tache_1/tache_1.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd w ]
+add_files C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd w ]
+add_files C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd w ]
+add_files C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd w ]
+add_files -fileset sim_1 C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd
+update_compile_order -fileset sim_1
+set_property top simu [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'simu' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj simu_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MAE'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/clk20hz.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ClkDiv_20'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'compteur_5b'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Moving_Colors'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'simu'
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 948.332 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.sim/sim_1/behav/xsim'
+"xelab -wto fdc5dcf7ca764ff8a1b2e464dd8c38a6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot simu_behav xil_defaultlib.simu -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fdc5dcf7ca764ff8a1b2e464dd8c38a6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot simu_behav xil_defaultlib.simu -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3813] value in initialization depends on signal 'red_max' [C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd:44]
+ERROR: [VRFC 10-3311] expression has 2 elements ; formal 'cmd' expects 3 [C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd:58]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit simu in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 948.332 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 17 17:49:02 2022...

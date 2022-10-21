@@ -24,7 +24,8 @@ process(clk10M,reset)
     elsif rising_edge(clk10M) then
        cpt<= cpt+1;
     
-        if cpt = 500000 then
+--        if cpt = 500000 then
+        if cpt = 10 then
             buff <= not buff;
         end if;  
 

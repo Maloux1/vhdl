@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'MAE'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/clk20hz.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ClkDiv_20'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'compteur_5b'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Moving_Colors'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'simu'
