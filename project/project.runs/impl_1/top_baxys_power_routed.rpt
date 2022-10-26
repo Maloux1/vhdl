@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Mon Oct 10 16:32:44 2022
-| Host             : SE106-09 running 64-bit major release  (build 9200)
+| Date             : Mon Oct 24 17:47:25 2022
+| Host             : SE104-12 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_baxys_power_routed.rpt -pb top_baxys_power_summary_routed.pb -rpx top_baxys_power_routed.rpx
 | Design           : top_baxys
 | Device           : xc7a35tcpg236-1
@@ -54,14 +54,14 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |    <0.001 |        3 |       --- |             --- |
 | Slice Logic             |     0.002 |     1523 |       --- |             --- |
-|   LUT as Logic          |     0.002 |      799 |     20800 |            3.84 |
+|   LUT as Logic          |     0.002 |      792 |     20800 |            3.81 |
 |   CARRY4                |    <0.001 |       91 |      8150 |            1.12 |
 |   Register              |    <0.001 |      345 |     41600 |            0.83 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes           |    <0.001 |        1 |     32600 |           <0.01 |
 |   LUT as Shift Register |    <0.001 |        6 |      9600 |            0.06 |
 |   Others                |     0.000 |       23 |       --- |             --- |
-| Signals                 |     0.002 |     1066 |       --- |             --- |
+| Signals                 |     0.002 |     1067 |       --- |             --- |
 | I/O                     |     0.017 |       56 |       106 |           52.83 |
 | Static Power            |     0.072 |          |           |                 |
 | Total                   |     0.093 |          |           |                 |

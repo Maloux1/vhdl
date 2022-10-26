@@ -36,8 +36,8 @@ entity simu is
 end simu;
 
 architecture Behavioral of simu is
-signal clk,reset : std_logic;
-signal RED_Out,GREEN_Out,BLUE_Out : std_logic_vector (3 downto 0);
+signal clk,reset : std_logic:= '0';
+signal RED_Out,GREEN_Out,BLUE_Out : std_logic_vector (3 downto 0):="0000";
 begin
 
     MOVING_COLORS: entity work.Moving_Colors
@@ -49,5 +49,5 @@ begin
     BLUE_out=> BLUE_out);
     
     reset<= '1','0' after 30 ns;
-    clk<= not clk after 10 ns; 
+    clk<= not clk after 1 ns; 
 end Behavioral;

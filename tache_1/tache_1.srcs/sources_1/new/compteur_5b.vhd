@@ -35,7 +35,7 @@ use IEEE.std_logic_unsigned.ALL;
 entity compteur_5b is
   Port (reset : in std_logic;
         clk : in std_logic;
-        cmd : in std_logic_vector (2 downto 0);
+        cmd : in std_logic_vector (1 downto 0);
         init : in std_logic;
         color_out : out std_logic_vector (4 downto 0)
   );
@@ -53,7 +53,8 @@ process(clk,reset)
         when "01" => cpt<=cpt+1; -- Incrementation
         when "10" => cpt<=cpt-1; -- Decrementation
         when "11" => cpt<=(others => init) ; -- Chargement //
-        when others  => NULL;
+        when "00" => NULL;
+        when others => NULL;
         end case;
     end if;
 end process;        

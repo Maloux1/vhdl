@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
 entity ClkDiv_20 is
-	port(clk10M,reset:in std_logic;
+	port(clk100M,reset:in std_logic;
     	 clk20: out std_logic:='0');
 end ClkDiv_20;
 
@@ -15,17 +15,17 @@ signal buff:std_logic:='0';
 begin
 
 
-process(clk10M,reset)
+process(clk100M,reset)
 
     begin
     if reset='0' then
        cpt<=(others=>'0');
        buff <= '0';
-    elsif rising_edge(clk10M) then
+    elsif rising_edge(clk100M) then
        cpt<= cpt+1;
     
---        if cpt = 500000 then
-        if cpt = 10 then
+        if cpt = 5000000 then
+--        if cpt = 10 then
             buff <= not buff;
         end if;  
 

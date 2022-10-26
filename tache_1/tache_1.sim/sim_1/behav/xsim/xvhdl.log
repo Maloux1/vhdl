@@ -1,10 +1,10 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'MAE'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/clk20hz.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/clk20hz.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ClkDiv_20'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'compteur_5b'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'Moving_Colors'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919.000/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'simu'
+ERROR: [VRFC 10-719] formal port/generic <clk> is not declared in <moving_colors> [C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd:45]
+ERROR: [VRFC 10-3353] formal port 'clk100' has no actual or default value [C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd:43]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd:38]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sim_1/new/simu.vhd' ignored due to errors

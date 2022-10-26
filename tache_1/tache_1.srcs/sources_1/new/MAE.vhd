@@ -32,7 +32,7 @@ use IEEE.std_logic_unsigned.ALL;
 --use UNISIM.VComponents.all;
 
 entity MAE is
-Port (reset,clk,MAX : in std_logic ;
+Port (reset,clk,MAX_RED, MAX_BLUE, MAX_GREEN : in std_logic ;
         CMD_R,CMD_B,CMD_G: out std_logic_vector(1 downto 0) 
 );
 end MAE;
@@ -54,20 +54,35 @@ begin
             CMD_R<=(others =>'1');
             etat<="01";
         when "01" =>
-            CMD_B<="00"; 
-            CMD_G<="01"; 
-            CMD_R<="10";
-            if MAX='1' then etat<="10"; end if;
+            if MAX_GREEN='1' then etat<="10";
+                CMD_B<="00"; 
+                CMD_G<="00"; 
+                CMD_R<="00";
+            else
+                CMD_B<="00"; 
+                CMD_G<="01"; 
+                CMD_R<="10";
+            end if;
         when "10" =>
-            CMD_B<="01"; 
-            CMD_G<="10"; 
-            CMD_R<="00";
-            if MAX='1' then etat<="11"; end if;
+            if MAX_BLUE='1' then etat<="11";
+                CMD_B<="00"; 
+                CMD_G<="00"; 
+                CMD_R<="00";
+            else
+                CMD_B<="01"; 
+                CMD_G<="10"; 
+                CMD_R<="00";
+            end if;
         when "11" =>
-            CMD_B<="01"; 
-            CMD_G<="10"; 
-            CMD_R<="00";
-            if MAX='1' then etat<="01"; end if;
+            if MAX_RED='1' then etat<="01";
+                CMD_B<="00"; 
+                CMD_G<="00"; 
+                CMD_R<="00";
+            else
+                CMD_B<="10"; 
+                CMD_G<="00"; 
+                CMD_R<="01";
+            end if;
         when others => null;
         end case;
     end if;

@@ -342,40 +342,16 @@ pause_rqt <= own_press;
 
 
 	-- CONTROLEUR VGA
-	vga_ctrl: entity work.VGA
-            port map (
-                clk25     => clk25,        -- Horloge 25 MHz
-                reset     => reset,        -- Reset Asynchrone
-                r            => red(3),            -- Commande Affichage Rouge
-                g             => green(3),        -- Commande Affichage Vert
-                b             => blue(3),            -- Commande Affichage Bleu
-                red         => VGA_red(3),        -- Affichage Pixel Rouge
-                green     => VGA_green(3),    -- Affichage Pixel Vert
-                blue         => VGA_blue(3),    -- Affichage Pixel Bleu
-                vsync     => vsync,        -- Synchro Verticale
-                hsync     => hsync,        -- Synchro Horizontale
-                visible     => visible,        -- Zone Visible de l'Image
-                endframe    => endframe,    -- Fin de l'Image Visible
-                xpos      => xpos,            -- Coordonnee X du Pixel Courant
-                ypos      => ypos);        -- Coordonnee Y du Pixel Courant
-
-VGA_red(2 downto 0) <= "000";
-VGA_green(2 downto 0) <= "000";
-VGA_blue(2 downto 0) <= "000";
-
------------------------------------------------------------------------------------
-
-    -- CONTROLEUR VGA 4 bits
---    vga_ctrl: entity work.VGA_4bits
+--	vga_ctrl: entity work.VGA
 --            port map (
 --                clk25     => clk25,        -- Horloge 25 MHz
 --                reset     => reset,        -- Reset Asynchrone
---				  r			=> VGA_red_i,		-- Commande Affichage Rouge
---				  g 		=> VGA_green_i,		-- Commande Affichage Vert
---				  b 		=> VGA_blue_i,		-- Commande Affichage Bleu
---                red         => VGA_red,        -- Affichage Pixel Rouge
---                green     => VGA_green,    -- Affichage Pixel Vert
---                blue         => VGA_blue,    -- Affichage Pixel Bleu
+--                r            => red(3),            -- Commande Affichage Rouge
+--                g             => green(3),        -- Commande Affichage Vert
+--                b             => blue(3),            -- Commande Affichage Bleu
+--               red         => VGA_red(3),        -- Affichage Pixel Rouge
+--                green     => VGA_green(3),    -- Affichage Pixel Vert
+--                blue         => VGA_blue(3),    -- Affichage Pixel Bleu
 --                vsync     => vsync,        -- Synchro Verticale
 --                hsync     => hsync,        -- Synchro Horizontale
 --                visible     => visible,        -- Zone Visible de l'Image
@@ -383,29 +359,53 @@ VGA_blue(2 downto 0) <= "000";
 --                xpos      => xpos,            -- Coordonnee X du Pixel Courant
 --                ypos      => ypos);        -- Coordonnee Y du Pixel Courant
 
+--VGA_red(2 downto 0) <= "000";
+--VGA_green(2 downto 0) <= "000";
+--VGA_blue(2 downto 0) <= "000";
+
+-----------------------------------------------------------------------------------
+
+    -- CONTROLEUR VGA 4 bits
+    vga_ctrl: entity work.VGA_4bits
+            port map (
+                clk25     => clk25,        -- Horloge 25 MHz
+                reset     => reset,        -- Reset Asynchrone
+				  r			=> VGA_red_i,		-- Commande Affichage Rouge
+				  g 		=> VGA_green_i,		-- Commande Affichage Vert
+				  b 		=> VGA_blue_i,		-- Commande Affichage Bleu
+                red         => VGA_red,        -- Affichage Pixel Rouge
+                green     => VGA_green,    -- Affichage Pixel Vert
+                blue         => VGA_blue,    -- Affichage Pixel Bleu
+                vsync     => vsync,        -- Synchro Verticale
+                hsync     => hsync,        -- Synchro Horizontale
+                visible     => visible,        -- Zone Visible de l'Image
+                endframe    => endframe,    -- Fin de l'Image Visible
+                xpos      => xpos,            -- Coordonnee X du Pixel Courant
+                ypos      => ypos);        -- Coordonnee Y du Pixel Courant
+
 
     -- INSTANCIATION MODULE DE GENERATION DE COULEURS VARIABLES
---    ColorGen:   entity work.Moving_Colors
---                port map(
---                    Clk100      => clk100,  -- Horloge 100 Mhz
---                    Reset       => reset, -- Reset Asynchrone
---                   RED_OUT     => variable_red,     -- Consigne Couleur Rouge
---                    GREEN_OUT   => variable_green,   -- Consigne Couleur Verte
---                    BLUE_OUT    => variable_blue     -- Consigne Couleur Bleue
---                );
+    ColorGen:   entity work.Moving_Colors
+                port map(
+                    Clk100      => clk100,  -- Horloge 100 Mhz
+                    Reset       => reset, -- Reset Asynchrone
+                   RED_OUT     => variable_red,     -- Consigne Couleur Rouge
+                    GREEN_OUT   => variable_green,   -- Consigne Couleur Verte
+                    BLUE_OUT    => variable_blue     -- Consigne Couleur Bleue
+                );
 
 
     -- CONSIGNE DE COULEUR ENVOYEE AU CONTROLEUR VGA
---    VGA_red_i <=    "0000" when master_slave = '0' else         -- Noir Si on Est en Mode Manette
---                    variable_red when (moving_color_cmd='1')    -- Sinon Couleur Variable si Commande Activée
---                    else red;                                   -- Sinon Consigne ROUGE Standard
+    VGA_red_i <=    "0000" when master_slave = '0' else         -- Noir Si on Est en Mode Manette
+                    variable_red when (moving_color_cmd='1')    -- Sinon Couleur Variable si Commande Activée
+                    else red;                                   -- Sinon Consigne ROUGE Standard
 
---    VGA_green_i <=  "0000" when master_slave = '0' else         -- Noir Si on Est en Mode Manette
---                    variable_green when (moving_color_cmd='1')  -- Sinon Couleur Variable si Commande Activée
---                    else green;                                 -- Sinon Consigne VERTE Standard
+    VGA_green_i <=  "0000" when master_slave = '0' else         -- Noir Si on Est en Mode Manette
+                    variable_green when (moving_color_cmd='1')  -- Sinon Couleur Variable si Commande Activée
+                    else green;                                 -- Sinon Consigne VERTE Standard
 
---    VGA_blue_i <=   "0000" when master_slave = '0' else         -- Noir Si on Est en Mode Manette
---                    variable_blue when (moving_color_cmd='1')   -- Sinon Couleur Variable si Commande Activée
---                    else blue;                                  -- Sinon Consigne BLEUE Standard
+    VGA_blue_i <=   "0000" when master_slave = '0' else         -- Noir Si on Est en Mode Manette
+                    variable_blue when (moving_color_cmd='1')   -- Sinon Couleur Variable si Commande Activée
+                    else blue;                                  -- Sinon Consigne BLEUE Standard
       
 end Behavioral;

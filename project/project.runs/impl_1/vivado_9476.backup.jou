@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Oct 10 16:31:17 2022
-# Process ID: 12472
-# Current directory: C:/Users/UserTP.PPI919.001/Desktop/project/project.runs/impl_1
+# Start of session at: Mon Oct 24 17:35:45 2022
+# Process ID: 9476
+# Current directory: C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.runs/impl_1
 # Command line: vivado.exe -log top_baxys.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_baxys.tcl -notrace
-# Log file: C:/Users/UserTP.PPI919.001/Desktop/project/project.runs/impl_1/top_baxys.vdi
-# Journal file: C:/Users/UserTP.PPI919.001/Desktop/project/project.runs/impl_1\vivado.jou
+# Log file: C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.runs/impl_1/top_baxys.vdi
+# Journal file: C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source top_baxys.tcl -notrace
