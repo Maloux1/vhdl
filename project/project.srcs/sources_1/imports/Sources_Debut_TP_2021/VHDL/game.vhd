@@ -105,9 +105,22 @@ begin
 	-------------------------------------------------------------------
 	-- REMPLACER CES 3 INSTRUCTIONS PAR L'INSTANCIATION DU MODULE MODE --
 
-	pause <= not pause_rqt;
-	lost_game <= '0';
-	brick_win <= '0';
+--	pause <= not pause_rqt;
+--	lost_game <= '0';
+--	brick_win <= '0';
+
+
+mode : entity work.mode
+Port map ( Pause_Rqt => Pause_Rqt,
+           EndFrame => endframe,
+           lost => lost,
+           No_brick => no_brick,
+           clk25 => clk25,
+           reset => reset,
+           Game_Lost => game_lost,
+           Brick_Win => brick_win,
+           Pause => pause);
+
 	-------------------------------------------------------------------
 
 

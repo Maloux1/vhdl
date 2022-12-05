@@ -39,8 +39,12 @@ begin
 	-- Generation des Commandes de Rotation
 	---------------------------------------------------------------------
 	-- REMPLACER CES 2 INSTRUCTIONS PAR L'INSTANCIATION DU MODULE MOVE --
-	rot_left		<= '0';
-	rot_right 	<= '0';
+--	rot_left		<= '0';
+--	rot_right 	<= '0';
+
+    move:entity work.move
+               port map( clk25, reset,Qa,Qb,rot_left,rot_right);
+
 	---------------------------------------------------------------------
 
 end Behavioral;

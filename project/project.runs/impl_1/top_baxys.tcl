@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.runs/impl_1/top_baxys.tcl"
+  variable script "C:/Users/3708307/Desktop/project/project.runs/impl_1/top_baxys.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -126,7 +127,7 @@ set rc [catch {
   set_param chipscope.maxJobs 2
   set_param xicom.use_bs_reader 1
   open_checkpoint top_baxys_routed.dcp
-  set_property webtalk.parent_dir C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/3708307/Desktop/project/project.cache/wt [current_project]
 set_property TOP top_baxys [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

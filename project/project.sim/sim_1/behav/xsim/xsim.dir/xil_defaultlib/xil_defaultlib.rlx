@@ -1,0 +1,10 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/3708307/Desktop/project/project.srcs/sim_1/new/TB_move.vhd,1668439801,vhdl,,,,tb_move,,,,,,,,
+C:/Users/3708307/Desktop/project/project.srcs/sim_1/new/TB_tempo_lost.vhd,1669651057,vhdl,,,,tb_tempo_lost,,,,,,,,
+C:/Users/3708307/Desktop/project/project.srcs/sim_1/new/TB_tempo_pause.vhd,1669652407,vhdl,,,,tb_tempo_pause,,,,,,,,
+C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/Tempo_Pause.vhd,1669647457,vhdl,C:/Users/3708307/Desktop/project/project.srcs/sim_1/new/TB_tempo_pause.vhd,,,tempo_pause,,,,,,,,
+C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/Tempo_lost.vhd,1669647457,vhdl,C:/Users/3708307/Desktop/project/project.srcs/sim_1/new/TB_tempo_lost.vhd,,,tempo_lost,,,,,,,,
+C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/move.vhd,1668439688,vhdl,C:/Users/3708307/Desktop/project/project.srcs/sim_1/new/TB_move.vhd,,,move,,,,,,,,

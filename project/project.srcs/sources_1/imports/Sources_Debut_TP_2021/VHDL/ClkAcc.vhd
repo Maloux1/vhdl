@@ -15,43 +15,22 @@ entity ClkAcc is
 end ClkAcc;
 
 architecture Behavioral of ClkAcc is
-
--- Compteur pour Horloge 25 Hz
-signal CPT_25: std_logic_vector(20 downto 0);
-
--- Signal Tampon pour l'horloge 25 Hz
-signal Clk2: std_logic;
-
-
+signal CPT: std_logic_vector(20 downto 0);
+signal clk_tmp: std_logic;
 begin
+Clk_Acc <= clk_tmp;
 
--- Affectation Horloge 25 Hz
-Clk_Acc <= Clk2;
-
-
---------------------------------------------
--- GESTION DES COMPTEURS DE DIVISION
---		ET GENERATION DE L'HORLOGE 25 Hz
 process(clk100,reset)
-
 	begin
-	
 		if reset = '0' then 
-		
-			Clk2 <= '0'; CPT_25 <= (others => '0');
-
+			clk_tmp <= '0';
+			CPT <= (others => '0');
 		elsif rising_edge(clk100) then
-			
-			CPT_25 <= CPT_25+1;
-			
-			if (CPT_25 = 1999999) then
-				CPT_25 <= (others => '0');
-				Clk2 <= not Clk2;
+			CPT <= CPT + 1;
+			if (CPT = 1999999) then
+				CPT <= (others => '0');
+				clk_tmp <= not clk_tmp;
 			end if;
-			
 		end if;
-
-end process;
-	
-
+    end process;
 end Behavioral;

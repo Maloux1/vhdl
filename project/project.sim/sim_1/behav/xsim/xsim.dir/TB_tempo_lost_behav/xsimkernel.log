@@ -1,0 +1,7 @@
+Running: xsim.dir/TB_tempo_lost_behav/xsimk.exe -simmode gui -wdb TB_tempo_lost_behav.wdb -simrunnum 0 -socket 51176
+Design successfully loaded
+Design Loading Memory Usage: 6232 KB (Peak: 6232 KB)
+Design Loading CPU Usage: 530 ms
+Simulation completed
+Simulation Memory Usage: 8712 KB (Peak: 8712 KB)
+Simulation CPU Usage: 561 ms

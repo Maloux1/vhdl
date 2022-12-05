@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Oct 24 17:46:50 2022
+| Date         : Mon Nov 28 17:02:13 2022
 | Host         : SE104-12 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_baxys_control_sets_placed.rpt
 | Design       : top_baxys
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    28 |
-|    Minimum number of control sets                        |    28 |
+| Total control sets                                       |    35 |
+|    Minimum number of control sets                        |    35 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    87 |
+| Unused register locations in slices containing registers |   111 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    28 |
-| >= 0 to < 4        |     1 |
-| >= 4 to < 6        |     7 |
-| >= 6 to < 8        |     3 |
+| Total control sets |    35 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |    10 |
+| >= 6 to < 8        |     5 |
 | >= 8 to < 10       |     6 |
-| >= 10 to < 12      |     3 |
+| >= 10 to < 12      |     4 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     8 |
@@ -58,49 +58,56 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              20 |            9 |
-| No           | No                    | Yes                    |              97 |           40 |
-| No           | Yes                   | No                     |              39 |           13 |
-| Yes          | No                    | No                     |              42 |            9 |
-| Yes          | No                    | Yes                    |              97 |           44 |
-| Yes          | Yes                   | No                     |              50 |           17 |
+| No           | No                    | No                     |              24 |           11 |
+| No           | No                    | Yes                    |             136 |           53 |
+| No           | Yes                   | No                     |              39 |           12 |
+| Yes          | No                    | No                     |              48 |           12 |
+| Yes          | No                    | Yes                    |             128 |           59 |
+| Yes          | Yes                   | No                     |              50 |           13 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------+---------------------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
-|    Clock Signal   |                         Enable Signal                         |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------+---------------------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
-|  clk100_IBUF_BUFG |                                                               |                                                  |                1 |              1 |         1.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/Cmd_Reg[0]_4                            | accelero_mgr/accelero/Cmd_Reg[0][6]_i_1_n_0      |                1 |              4 |         4.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0 | obj_ctrl/ball_ctrl/ouest                         |                3 |              4 |         1.33 |
-|  clk25_BUFG       | accelero_mgr/accelero/sel                                     | accelero_mgr/accelero/Reset_Cnt_Num_Reads        |                1 |              4 |         4.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/StC_Adxl_Ctrl[3]                        | obj_ctrl/ball_ctrl/ouest                         |                1 |              4 |         4.00 |
-|  clk25_BUFG       | obj_ctrl/ball_ctrl/inc_type[3]_i_1_n_0                        | obj_ctrl/ball_ctrl/ouest                         |                3 |              4 |         1.33 |
-|  clk25_BUFG       | accelero_mgr/accelero/Cmd_Reg[1][6]_i_2_n_0                   | accelero_mgr/accelero/Cmd_Reg[1]0_in[7]          |                3 |              5 |         1.67 |
-|  clk25_BUFG       | obj_ctrl/ball_ctrl/zone_pad_bounce[4]_i_1_n_0                 | obj_ctrl/ball_ctrl/ouest                         |                2 |              5 |         2.50 |
-|  clk25_BUFG       |                                                               | accelero_mgr/accelero/SPI_Interface/SCLK_2X_DIV0 |                2 |              6 |         3.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/Cmd_Reg[2]_5                            | accelero_mgr/accelero/Cmd_Reg[2]_3[7]            |                2 |              6 |         3.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/Shift_Cmd_Reg                           | obj_ctrl/ball_ctrl/ouest                         |                2 |              7 |         3.50 |
-|  clk25Hz/CLK      | obj_ctrl/pad_ctrl/ypong_left                                  | obj_ctrl/ball_ctrl/ouest                         |                2 |              8 |         4.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/SPI_Interface/DONE_1_i_1_n_0            |                                                  |                1 |              8 |         8.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/SPI_Interface/MOSI_REG[7]_i_1_n_0       |                                                  |                2 |              8 |         4.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/SPI_Interface/SHIFT_TICK_IN             |                                                  |                1 |              8 |         8.00 |
-|  clk25_BUFG       | obj_ctrl/pad_ctrl/ypong_right                                 | obj_ctrl/ball_ctrl/ouest                         |                2 |              8 |         4.00 |
-|  clk25Hz/CLK      | game_ctrl/game_select/E[0]                                    | obj_ctrl/ball_ctrl/ouest                         |                3 |              9 |         3.00 |
-|  clk25_BUFG       |                                                               | accelero_mgr/accelero/Cnt_SS_Inactive0           |                3 |             10 |         3.33 |
-|  clk25_BUFG       | vga_ctrl/sel                                                  | obj_ctrl/ball_ctrl/ouest                         |                4 |             10 |         2.50 |
-|  clk25_BUFG       | aff/sel_seg                                                   | obj_ctrl/ball_ctrl/ouest                         |                4 |             11 |         2.75 |
-|  clk25_BUFG       | accelero_mgr/accelero/sel                                     | accelero_mgr/accelero/ACCEL_Y_SUM[0]_i_1_n_0     |                4 |             16 |         4.00 |
-|  clk25_BUFG       |                                                               | accelero_mgr/accelero/Reset_Sample_Rate_Div      |                5 |             17 |         3.40 |
-|  clk25_BUFG       |                                                               |                                                  |                8 |             19 |         2.38 |
-|  clk25_BUFG       | obj_ctrl/ball_ctrl/xball[9]_i_1_n_0                           | obj_ctrl/ball_ctrl/ouest                         |               18 |             20 |         1.11 |
-|  clk25_BUFG       | buttons/compteur[0]_i_1_n_0                                   | obj_ctrl/ball_ctrl/ouest                         |                6 |             22 |         3.67 |
-|  clk100_IBUF_BUFG |                                                               | obj_ctrl/ball_ctrl/ouest                         |                8 |             24 |         3.00 |
-|  clk25_BUFG       | accelero_mgr/accelero/SPI_Interface/Shift_Data_Reg            |                                                  |                5 |             26 |         5.20 |
-|  clk25_BUFG       |                                                               | obj_ctrl/ball_ctrl/ouest                         |               35 |             79 |         2.26 |
-+-------------------+---------------------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
++---------------------+---------------------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+|     Clock Signal    |                         Enable Signal                         |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------+---------------------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+|  ColorGen/clock/CLK |                                                               | obj_ctrl/ball_ctrl/ouest                         |                1 |              2 |         2.00 |
+|  ColorGen/clock/CLK |                                                               |                                                  |                1 |              3 |         3.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/sel                                     | accelero_mgr/accelero/Reset_Cnt_Num_Reads        |                1 |              4 |         4.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0 | obj_ctrl/ball_ctrl/ouest                         |                2 |              4 |         2.00 |
+|  clk25_BUFG         | obj_ctrl/ball_ctrl/inc_type[3]_i_1_n_0                        | obj_ctrl/ball_ctrl/ouest                         |                4 |              4 |         1.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/Cmd_Reg[0]_4                            | accelero_mgr/accelero/Cmd_Reg[0][6]_i_1_n_0      |                2 |              4 |         2.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/StC_Adxl_Ctrl[3]                        | obj_ctrl/ball_ctrl/ouest                         |                1 |              4 |         4.00 |
+|  ColorGen/clock/CLK | ColorGen/MAE/CMD_R_reg[1]_0[0]                                | obj_ctrl/ball_ctrl/ouest                         |                2 |              5 |         2.50 |
+|  clk25_BUFG         | obj_ctrl/ball_ctrl/zone_pad_bounce[4]_i_1_n_0                 | obj_ctrl/ball_ctrl/ouest                         |                2 |              5 |         2.50 |
+|  clk25_BUFG         | accelero_mgr/accelero/Cmd_Reg[1][6]_i_2_n_0                   | accelero_mgr/accelero/Cmd_Reg[1]0_in[7]          |                1 |              5 |         5.00 |
+|  ColorGen/clock/CLK | ColorGen/MAE/CMD_G_reg[1]_0[0]                                | obj_ctrl/ball_ctrl/ouest                         |                1 |              5 |         5.00 |
+|  ColorGen/clock/CLK | ColorGen/MAE/E[0]                                             | obj_ctrl/ball_ctrl/ouest                         |                2 |              5 |         2.50 |
+|  clk25_BUFG         |                                                               | accelero_mgr/accelero/SPI_Interface/SCLK_2X_DIV0 |                2 |              6 |         3.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/Cmd_Reg[2]_5                            | accelero_mgr/accelero/Cmd_Reg[2]_3[7]            |                1 |              6 |         6.00 |
+|  clk25_BUFG         | game_ctrl/mode/MAE/E[0]                                       | obj_ctrl/ball_ctrl/ouest                         |                3 |              6 |         2.00 |
+|  clk25_BUFG         | game_ctrl/mode/MAE/S0                                         |                                                  |                3 |              6 |         2.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/Shift_Cmd_Reg                           | obj_ctrl/ball_ctrl/ouest                         |                1 |              7 |         7.00 |
+|  clk25_BUFG         | obj_ctrl/pad_ctrl/ypong_right                                 | obj_ctrl/ball_ctrl/ouest                         |                2 |              8 |         4.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/SPI_Interface/DONE_1_i_1_n_0            |                                                  |                1 |              8 |         8.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/SPI_Interface/MOSI_REG[7]_i_1_n_0       |                                                  |                1 |              8 |         8.00 |
+|  clk25_BUFG         | accelero_mgr/accelero/SPI_Interface/SHIFT_TICK_IN             |                                                  |                3 |              8 |         2.67 |
+|  clk25Hz/CLK        | game_ctrl/game_select/E[0]                                    | obj_ctrl/ball_ctrl/ouest                         |                2 |              8 |         4.00 |
+|  clk25Hz/CLK        | game_ctrl/game_select/Pause_reg[0]                            | obj_ctrl/ball_ctrl/ouest                         |                3 |              9 |         3.00 |
+|  clk25_BUFG         | game_ctrl/mode/TP/memo0                                       | game_ctrl/mode/MAE/AR[0]                         |                3 |             10 |         3.33 |
+|  clk25_BUFG         |                                                               | accelero_mgr/accelero/Cnt_SS_Inactive0           |                3 |             10 |         3.33 |
+|  clk25_BUFG         | vga_ctrl/sel                                                  | obj_ctrl/ball_ctrl/ouest                         |                4 |             10 |         2.50 |
+|  clk25_BUFG         | aff/sel_seg                                                   | obj_ctrl/ball_ctrl/ouest                         |                6 |             11 |         1.83 |
+|  clk25_BUFG         | accelero_mgr/accelero/sel                                     | accelero_mgr/accelero/ACCEL_Y_SUM[0]_i_1_n_0     |                4 |             16 |         4.00 |
+|  clk25_BUFG         |                                                               | accelero_mgr/accelero/Reset_Sample_Rate_Div      |                4 |             17 |         4.25 |
+|  clk25_BUFG         | obj_ctrl/ball_ctrl/xball[9]_i_1_n_0                           | obj_ctrl/ball_ctrl/ouest                         |               19 |             20 |         1.05 |
+|  clk25_BUFG         |                                                               |                                                  |               10 |             21 |         2.10 |
+|  clk25_BUFG         | buttons/compteur[0]_i_1_n_0                                   | obj_ctrl/ball_ctrl/ouest                         |                6 |             22 |         3.67 |
+|  clk25_BUFG         | accelero_mgr/accelero/SPI_Interface/Shift_Data_Reg            |                                                  |                4 |             26 |         6.50 |
+|  clk100_IBUF_BUFG   |                                                               | obj_ctrl/ball_ctrl/ouest                         |               15 |             46 |         3.07 |
+|  clk25_BUFG         |                                                               | obj_ctrl/ball_ctrl/ouest                         |               40 |             94 |         2.35 |
++---------------------+---------------------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
 
 

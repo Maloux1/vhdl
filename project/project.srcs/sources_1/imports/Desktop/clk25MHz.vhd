@@ -14,23 +14,18 @@ signal cpt:std_logic:='0';
 signal buff:std_logic:='0';
 begin
 
+clk25 <= buff;
 
 process(clk100,reset)
-
     begin
-    if reset='0' then
-       cpt<='0';
-       buff <= '0';
-    elsif rising_edge(clk100) then
-       cpt<=not cpt;
-    
-        if cpt = '1' then
-            buff <= not buff;
-            clk25 <= buff;
-        end if;  
-
-    end if;
-    
+        if reset='0' then
+            cpt<='0';
+            buff <= '0';
+        elsif rising_edge(clk100) then
+            cpt<=not cpt; 
+            if cpt = '1' then
+                buff <= not buff;
+            end if;  
+        end if;
     end process;
-    
 end behav;

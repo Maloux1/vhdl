@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.runs/synth_1/top_baxys.tcl"
+  variable script "C:/Users/3708307/Desktop/project/project.runs/synth_1/top_baxys.tcl"
   variable category "vivado_synth"
 }
 
@@ -72,49 +72,54 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.cache/wt [current_project]
-set_property parent.project_path C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/3708307/Desktop/project/project.cache/wt [current_project]
+set_property parent.project_path C:/Users/3708307/Desktop/project/project.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo c:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.cache/ip [current_project]
+set_property ip_output_repo c:/Users/3708307/Desktop/project/project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ADXL362Ctrl.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ClkAcc.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/MAE.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/clk20hz.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/compteur_5b.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/new/Moving_Colors.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/SPI_If.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Desktop/clk25MHz.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/tache_1/tache_1.srcs/sources_1/imports/VHDL/VGA_4bits.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/pong_package.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/switch_mgr.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/button_mgr.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/aff_mgr_basys.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/rotary.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ip_rotary.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/accelero_mgr.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/decor.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/pad.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/bounce.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ball.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/brick.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/objects.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/display.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/game_mgr.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/mas_sla_mgr.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/game.vhd
-  C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/Top_Basys.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ADXL362Ctrl.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ClkAcc.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/new/MAE.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/MAE_mode.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/new/compteur_5b.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/new/Moving_Colors.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/SPI_If.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/Tempo_Pause.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/Tempo_lost.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Desktop/clk25MHz.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/VHDL/VGA_4bits.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/pong_package.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/switch_mgr.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/button_mgr.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/aff_mgr_basys.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/rotary.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/move.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ip_rotary.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/accelero_mgr.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/decor.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/pad.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/bounce.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/ball.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/brick.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/objects.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/display.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/new/mode.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/game_mgr.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/mas_sla_mgr.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/game.vhd
+  C:/Users/3708307/Desktop/project/project.srcs/sources_1/imports/Sources_Debut_TP_2021/VHDL/Top_Basys.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -125,8 +130,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/constrs_1/imports/XDC/Console_Basys.xdc
-set_property used_in_implementation false [get_files C:/Users/UserTP.PPI919/Desktop/vhdl-master/project/project.srcs/constrs_1/imports/XDC/Console_Basys.xdc]
+read_xdc C:/Users/3708307/Desktop/project/project.srcs/constrs_1/imports/XDC/Console_Basys.xdc
+set_property used_in_implementation false [get_files C:/Users/3708307/Desktop/project/project.srcs/constrs_1/imports/XDC/Console_Basys.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

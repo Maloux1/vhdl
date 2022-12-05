@@ -313,8 +313,8 @@ pause_rqt <= own_press;
 				game_rqt 			=> game_rqt,			-- Demande de Changement de Jeu (Pong / Casse Briques)
 				
 				-- ************** REMPLACER L'INSTRUCTION CI-DESSOUS PAR CELLE EN COMMENTAIRE *****************
-				pause_rqt 			=> S1,					-- Demande de Pause - Appui sur Bouton Encodeur
-				-- pause_rqt 			=> pause_rqt,					-- Demande de Pause - Appui sur Bouton Encodeur
+				--pause_rqt 			=> S1,					-- Demande de Pause - Appui sur Bouton Encodeur
+				pause_rqt 			=> pause_rqt,					-- Demande de Pause - Appui sur Bouton Encodeur
 				-- ********************************************************************************************
 
 				endframe 			=> endframe,			-- Fin de l'Image Visible
@@ -389,7 +389,7 @@ pause_rqt <= own_press;
                 port map(
                     Clk100      => clk100,  -- Horloge 100 Mhz
                     Reset       => reset, -- Reset Asynchrone
-                   RED_OUT     => variable_red,     -- Consigne Couleur Rouge
+                    RED_OUT     => variable_red,     -- Consigne Couleur Rouge
                     GREEN_OUT   => variable_green,   -- Consigne Couleur Verte
                     BLUE_OUT    => variable_blue     -- Consigne Couleur Bleue
                 );
