@@ -12,8 +12,8 @@ use ieee.std_logic_unsigned.all;
 entity VGA_4bits is
 port (
 		clk25,reset: in std_logic;							-- Horloge, Reset Asynchrone
-		r,g,b: in std_logic_vector(3 downto 0);									-- Commande de Couleur Donnee par le Controleur de Jeu
-		red,green,blue: out std_logic_vector(3 downto 0);					-- Affichage Couleur vers Ecran VGA
+		r,g,b: in std_logic_vector(3 downto 0);					-- Commande de Couleur Donnee par le Controleur de Jeu
+		red,green,blue: out std_logic_vector(3 downto 0);		-- Affichage Couleur vers Ecran VGA
 		hsync,vsync: out std_logic;						-- Synchro Ligne (H) et Trame (V)
 		visible: out std_logic;								-- Partie Visible de l'Image
 		endframe: out std_logic;							-- Dernier Pixel Visible d'une Trame

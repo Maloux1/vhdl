@@ -1,0 +1,46 @@
+intro:
+
+Ce projet consiste à compléter une console implémentée en VHDL et tournant sur un FPGA.
+Pour ce faire nous disposions d’une console incomplète, que nous avons complété en suivant une série de tâches.
+Cependant nous avons dû commencer par comprendre l’architecture globale de la console pour pouvoir efficacement y apporter des modifications, c’est cette partie que je vais présenter.
+
+
+présentation générale:
+
+Module Game gère:
+	plus de briques à casser, signal généré
+	module display qui sert à savoir pour chaque pixel comment on va l'afficher, en fonction de signaux générés (par objects) pour le type de pixel (pas de coordonnées) renvoie une couleur sur 3 bits (rgb)
+	module mode
+		module MAE_mode, MAE qui gère la fin du jeu, la défaite, le jeu, la pause
+		module Tempo_lost et tempo_pause qui gèrent la temporisation pour la défaite et la pause pour ne pas empecher de mettre pause plusieurs fois quand on appuie sur le bouton une fois
+	module game_mgr gère le mode de jeu (casse brique, pong, ...)
+	module master_slave_mgr gère la manette et active ou non le VGA en fonction
+
+Module Objects gère:
+	module décor génére les signaux pour les obstables comme les murs, le signal de bas d'écran, le damier
+	module pad gère les raquettes, calcule les coordonnées pour pouvoir gèrer les collisions plus tard
+	module bounce vérifie toutes les collisions possibles pour la balle et génére des signaux de collisions dans les cas donnés
+	module ball utilise les signaux générés pour calculer la nouvelle trajectoire de la balle
+	module brick_ctrl génère des signaux si les briques sont intactes ou détruites
+
+Module moving_colors gère:
+	génération des couleurs changeantes pour les briques.
+
+Module VGA_4bits gère:
+	la connection vga avec l'écran, c'est à dire:
+	itere sur tous les pixels en en prenant 1 à chaque cycle de 25Mhz.
+	envoie les couleurs à afficher à l'écran via le VGA, couleurs générées par: moving_colors pour les briques, 
+
+Module Clk_div:
+	diviseur d'horloge avec en entrée une clock de 100Mhz et en sortie 25Mhz.
+
+Module Clk_acc:
+	diviseur d'horloge avec en entrée une clock de 100Mhz et en sortie 25hz.
+
+Module ip_rotary:
+	Module rotary : Gestion des Signaux venant du Codeur Rotatif
+	Module move : MAE pour contrôler les signaux venant du module rotary et les transformer en signaux gauche/droite.
+
+
+chemin des pixels : coordonnées générées par VGA_4bits envoyées à objects, objects détermine leur type (mur, pad, ball, brick) et génère des signaux correspondants qu'il envoie au module display qui nous génère une couleur à envoyer au cable VGA via le module VGA_4bits
+
